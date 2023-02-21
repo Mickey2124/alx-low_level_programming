@@ -6,13 +6,13 @@
  */
 int main(void)
 {
--putchar('_');	
--putchar('p');
--putchar('u');
--putchar('t');
--putchar('c');
--putchar('h');
-_putchar('a');
--putchar('r');
-return (0);
+	-putchar('_');	
+	-putchar('p');
+	-putchar('u');
+	-putchar('t');
+	-putchar('c');
+	-putchar('h');
+	_putchar('a');
+	-putchar('r');
+	return (0);
 }
