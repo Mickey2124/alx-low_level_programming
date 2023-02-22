@@ -1,39 +1,22 @@
 #include <stdio.h>
+
 /**
- * main - print numbers from 00 to 99.
-(*
- * Return: 0 on success
+ * main - Print the sum of all multiple of 3 or 5 up to 1024
+ * Return: Always (success)
  */
+
 int main(void)
 {
-int i = '0';
-int j = '0';
-int k = '0';
-while (i <= '7')
+int i, z = 0;
+
+while (i < 1024)
 {
-while (j <= '8')
+if ((i % 3 == 0) || (i % 5 == 0))
 {
-while (k <= '9')
-{
-if (i < j && j < k)
-{
-putchar(i);
-putchar(j);
-putchar(k);
-if (!(i == '7' && j == '8' && k == '9'))
-{
-putchar(',');
-putchar(' ');
+z += i;
 }
-}
-k++;
-}
-k = '0';
-j++;
-}
-j = '0';
 i++;
 }
-putchar('\n');
+printf("%d\n", z);
 return (0);
 }
