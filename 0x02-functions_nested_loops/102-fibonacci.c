@@ -1,39 +1,29 @@
 #include <stdio.h>
+
 /**
- * main - print numbers from 00 to 99.
-(*
- * Return: 0 on success
+ * main - Prints the first 52 fibonacci numbers
+ * Return: Nothing!
  */
+
 int main(void)
 {
-int i = '0';
-int j = '0';
-int k = '0';
-while (i <= '7')
+int i = 0;
+long j = 1, k = 2;
+
+while (i < 50)
 {
-while (j <= '8')
+if (i == 0)
+printf("%ld", j);
+else if (i == 1)
+printf(", %ld", k);
+else
 {
-while (k <= '9')
-{
-if (i < j && j < k)
-{
-putchar(i);
-putchar(j);
-putchar(k);
-if (!(i == '7' && j == '8' && k == '9'))
-{
-putchar(',');
-putchar(' ');
+k += j;
+j = k - j;
+printf(", %ld", k);
 }
+++i;
 }
-k++;
-}
-k = '0';
-j++;
-}
-j = '0';
-i++;
-}
-putchar('\n');
+printf("\n");
 return (0);
 }
