@@ -39,6 +39,6 @@ if (count != 98)
 printf(", ");
 count++;
 }
-_putchar('\n');
+putchar('\n');
 return (0);
 }
