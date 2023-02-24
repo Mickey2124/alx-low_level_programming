@@ -8,28 +8,26 @@
  * Return: largest number
  */
 
-int main(void)
+int largest_number(int a, int b, int c)
 {
 
-	int a, b, c;
-
+	
 	int largest;
 
-     
-
-
-	        if (a > b && a > c)
-			    {
+   
+	if (a > c && c > b)
+{
 				            largest = a;
-					        }
-		    else if (b > a && b > c)
-			        {
-					        largest = b;
-						    }
-		        else
-				    {
-					            largest = c;
-						        }
+					   }
+else if (c < a && c > b)
+{
+largest = c;
 
-  return (largest);
+}
+else
+{
+largest = b;
+
+}
+ return (largest);
 }
