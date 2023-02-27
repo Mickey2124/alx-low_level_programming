@@ -10,7 +10,7 @@
 int main(void)
 {
 int sum, i, r;
-char decode[27] = "abcdefghijklmnopqrstuvwxyz";
+char decode[28] = "abcdefghijklmnopqrstuvwxyz!";
 char key[30];
 sum = 0;
 i = 0;
