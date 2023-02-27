@@ -1,33 +1,30 @@
 #include <stdio.h>
-#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 /**
- * main - program that generates random vaild
- * passwords for the program 101-crackme
- * Return: Always 0 (success)
+ * main - entry point
+ * Description: creates a random key for program 101_crackme
+ * Return: always 0
  */
 int main(void)
 {
-	int pass[100]
-		int i, sum, n;
+int sum, i, r;
+char decode[27] = "abcdefghijklmnopqrstuvwxyz";
+char key[30];
+sum = 0;
+i = 0;
+srand(time(NULL));
 
-	sum = 0;
-
-	srand(time(NULL));
-
-	for (i = 0; i < 100; i++)
-	{
-		pass[i] = rand() % 78;
-		sum += (pass[i] + '0');
-		putchar (pass[i] + '0');
-		if ((2772 - sum) - '0' < 78)
-		{
-			n = 2772 - sum - '0';
-			sum += n;
-			putchar(n + '0');
-			break;
-		}
-	}
-	return (0);
+while (sum < 2772)
+{
+r = rand() % 10;
+key[i] = decode[r];
+sum += key[i];
+i++;
+}
+r = 2772 - sum;
+key[i] = r;
+printf("%s\n",  key);
+return (0);
 }
