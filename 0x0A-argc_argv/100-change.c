@@ -26,17 +26,15 @@ i -= 5;
 else if (i % 2 == 0)
 {
 if (i % 10 == 6)
-																												i -= 1;
-																										else
-																															i -= 2;
-																												}
-																		else
-																						i -= 1;
-
-																				count++;
-																					}
-
-				return (count);
+i -= 1;
+else
+i -= 2;
+}
+else
+i -= 1;
+count++;
+}
+return (count);
 }
 
 /**
@@ -47,26 +45,22 @@ if (i % 10 == 6)
  */
 int main(int argc, char *argv[])
 {
-		int i, coin;
+int i, coin;
 
-			coin = 0;
+coin = 0;
 
-				if (argc != 2)
-						{
-									printf("Error\n");
-											return (1);
-												}
-
-					i = atoi(argv[1]);
-
-						if (i < 0)
-									printf("0\n");
-							else
-									{
-												coin = coinConverter(i);
-
-														printf("%d\n", coin);
-															}
-
-								return (0);
+if (argc != 2)
+{
+printf("Error\n");
+return (1);
+}
+i = atoi(argv[1]);
+if (i < 0)
+printf("0\n");
+else
+{
+coin = coinConverter(i);
+printf("%d\n", coin);
+}
+return (0);
 }
