@@ -1,32 +1,45 @@
-#include <stdio.h>
-#include "dog.h"
 #include <stdlib.h>
+#include "dog.h"
 /**
- * print_dog - Prints name, age and owner if not null.
- * @d: is pointer to the struct dog.
-**/
-
-void print_dog(struct dog *d)
+ * new_dog - creates a new dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ * Return: pointer to a new dog
+ */
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	if (d == NULL)
+	unsigned int nl, ol, i;
+	dog_t *dog;
+
+	if (name == NULL || owner == NULL)
+		return (NULL);
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return (NULL);
+	for (nl = 0; name[nl]; nl++)
+		;
+	nl++;
+	dog->name = malloc(nl * sizeof(char));
+	if (dog->name == NULL)
 	{
-		return;
+		free(dog);
+		return (NULL);
 	}
-	if (d->name == NULL)
+	for (i = 0; i < nl; i++)
+		dog->name[i] = name[i];
+	dog->age = age;
+	for (ol = 0; owner[ol]; ol++)
+		;
+	ol++;
+	dog->owner = malloc(ol * sizeof(char));
+	if (dog->owner == NULL)
 	{
-		printf("Name: (nil)\n");
+		free(dog->name);
+		free(dog);
+		return (NULL);
 	}
-	else
-	{
-		printf("Name: %s\n", d->name);
-	}
-	printf("Age: %f\n", d->age);
-	if (d->owner == NULL)
-	{
-		printf("Owner: (nil)\n");
-	}
-	else
-	{
-		printf("Owner: %s\n", d->owner);
-	}
+	for (i = 0; i < ol; i++)
+		dog->owner[i] = owner[i];
+	return (dog);
 }
